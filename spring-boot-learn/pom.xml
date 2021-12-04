@@ -10,6 +10,7 @@
     <modules>
         <module>ssm-xml</module>
         <module>ssm-java</module>
+        <module>maven-learn</module>
     </modules>
     <packaging>pom</packaging>
 
