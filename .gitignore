@@ -25,6 +25,7 @@
 hs_err_pid*
 
 *.iml
+!.mvn/wrapper/maven-wrapper.jar
 vcs.xml
 .idea/
 target/
