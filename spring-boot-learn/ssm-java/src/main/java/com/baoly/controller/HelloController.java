@@ -35,7 +35,7 @@ public class HelloController {
         for (int i = 0; i < 5; i++) {
             User user = new User();
             user.setAge(i);
-            user.setName("nightcat" + i);
+            user.setUserName("nightcat" + i);
             user.setBirthday(new Date());
             users.add(user);
         }

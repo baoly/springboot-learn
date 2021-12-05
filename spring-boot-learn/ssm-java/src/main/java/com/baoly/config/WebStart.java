@@ -12,9 +12,13 @@ import javax.servlet.ServletRegistration;
 public class WebStart implements WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
-        AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
-        ctx.register(SpringMvcConfig.class);
-        ServletRegistration.Dynamic springmvc = servletContext.addServlet("springmvc", new DispatcherServlet(ctx));
+        AnnotationConfigWebApplicationContext ac = new AnnotationConfigWebApplicationContext();
+        ac.setServletContext(servletContext);
+        ac.register(SpringMvcConfig.class);
+        ac.refresh();
+        DispatcherServlet dispatcherServlet = new DispatcherServlet(ac);
+        ServletRegistration.Dynamic springmvc = servletContext.addServlet("springmvc", dispatcherServlet);
+        springmvc.setLoadOnStartup(1);
         springmvc.addMapping("/");
 
     }
