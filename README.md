@@ -1,2 +1,1 @@
-# springboot-learn
-springboot学习项目
+A quick-start spring-boot learn repository
